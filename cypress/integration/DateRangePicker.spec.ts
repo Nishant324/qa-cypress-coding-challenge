@@ -11,6 +11,7 @@ describe('DateRangePicker', () => {
     cy.visit('/');
     cy.get('.DateRangeSelect').should('be.visible');
   });
+  //Test case for selecting the dates from the date picker
   it('verify the functionality of date picker', () => {
     //Clicks on the Start date field to open the date picker
     cy.get('#mui-4').click({force : true});
@@ -29,6 +30,18 @@ describe('DateRangePicker', () => {
     cy.contains('1').should('be.visible');
     cy.contains('31').should('be.visible');
   })
+    //Test case for verifying that user is allowed to enter the dates manually.
+  it('Verify that user can manually add the date ranges on the start and end date fields', () => {
+    //Assertion
+    cy.get('#mui-4').should('be.visible')
+    //For clearing and adding the date value manually.
+    cy.get('#mui-4').clear().type("06012022");
+    //Assertion
+    cy.get('#mui-5').should('be.visible')
+    //For clearing and adding the date value manually.
+    cy.get('#mui-5').clear().type("31012022");
+  })
+
 });
 
 
