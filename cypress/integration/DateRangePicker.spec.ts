@@ -41,7 +41,16 @@ describe('DateRangePicker', () => {
     //For clearing and adding the date value manually.
     cy.get('#mui-5').clear().type("31012022");
   })
-
+it('Verify that if user enters invalid date range then the field turn it to valid date', () => {
+    //Assertion
+    cy.get('#mui-4').should('be.visible')
+    //For clearing and adding the invlid date value manually.
+    cy.get('#mui-4').clear().type("70802022{enter}");
+    //Assertion
+    cy.get('#mui-5').should('be.visible')
+    //For clearing and adding the invlid date value manually.
+    cy.get('#mui-5').clear().type("90402022{enter}");
+  })
 });
 
 
