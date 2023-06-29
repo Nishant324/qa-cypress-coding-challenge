@@ -10,6 +10,8 @@ describe('DateRangePicker', () => {
   it('should render', () => {
     cy.visit('/');
     cy.get('.DateRangeSelect').should('be.visible');
+  });
+  it('verify the functionality of date picker', () => {
     //Clicks on the Start date field to open the date picker
     cy.get('#mui-4').click({force : true});
     //Assertion for verifying that the picker is visible to users
@@ -26,7 +28,7 @@ describe('DateRangePicker', () => {
     cy.get(':nth-child(2) > .css-f7iyql > .MuiIconButton-edgeStart > [data-testid="ArrowRightIcon"]').should('be.visible');
     cy.contains('1').should('be.visible');
     cy.contains('31').should('be.visible');
-  });
+  })
 });
 
 
