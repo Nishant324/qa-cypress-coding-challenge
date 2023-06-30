@@ -12,7 +12,7 @@ class DateRangePickerPage {
     }
 
     openEndDatePicker() {
-      return cy.get('#mui-4');
+      return cy.get('#mui-5');
     }
   
     getDatePicker() {

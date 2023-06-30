@@ -30,9 +30,11 @@ const EnddayNumber = endday.toString();
 
 describe('DateRangePicker', () => {
   const dateRangePickerPage = new DateRangePickerPage();
-  it('should render', () => {
+  beforeEach(() => {
     // Visit the application screen
     dateRangePickerPage.visit();
+  });
+  it('should render', () => {
     // Verify that the DateRangePicker component is visible
     dateRangePickerPage.getDateRangePicker().should('be.visible');
   });
