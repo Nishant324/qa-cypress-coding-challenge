@@ -1,4 +1,5 @@
 import 'cypress-xpath';
+import DateRangePickerPage  from '../POM/DateRangePickerPOMFile.spec';
 
 // Get the current date
 const currentDate = new Date();
@@ -28,21 +29,22 @@ const formattedEndDate = `${endmonth} ${endday}, ${endyear}`;
 const EnddayNumber = endday.toString();
 
 describe('DateRangePicker', () => {
+  const dateRangePickerPage = new DateRangePickerPage();
   it('should render', () => {
     // Visit the application screen
-    cy.visit('/');
+    dateRangePickerPage.visit();
     // Verify that the DateRangePicker component is visible
-    cy.get('.DateRangeSelect').should('be.visible');
+    dateRangePickerPage.getDateRangePicker().should('be.visible');
   });
 
   it('should verify the functionality of the date picker', () => {
     // Click on the Start date field to open the date picker
-    cy.get('#mui-4').click();
+    dateRangePickerPage.openStartDatePicker().click();
     // Verify that the date picker is visible to the user
-    cy.get('.css-1xhj18k').should('be.visible');
+    dateRangePickerPage.getDatePicker().should('be.visible');
     // Test the functionality of the forward and backward arrow buttons
-    cy.xpath('(//*[name()="svg"])[1]').should('be.visible').click();
-    cy.xpath('(//*[name()="svg"])[4]').should('be.visible').click();
+    dateRangePickerPage.clickForwardArrow().should('be.visible').click();
+    dateRangePickerPage.clickBackwardArrow().should('be.visible').click();
     // Select the start and end date ranges within the picker
     cy.get(`[aria-label="${formattedDate}"]`).contains(StartdayNumber).should('be.visible').click();
     cy.get(`[aria-label="${formattedEndDate}"]`).contains(EnddayNumber).should('be.visible').click();
@@ -55,8 +57,8 @@ describe('DateRangePicker', () => {
       const ValidEndDate = data.ValidEndDate;
     
       // Use the fixture data in your test assertions or actions
-      cy.get('#mui-4').should('be.visible').clear().type(ValidStartDate);
-      cy.get('#mui-5').should('be.visible').clear().type(ValidEndDate);
+      dateRangePickerPage.openStartDatePicker().should('be.visible').clear().type(ValidStartDate);
+      dateRangePickerPage.openEndDatePicker().should('be.visible').clear().type(ValidEndDate);
     });
   });
 
@@ -67,8 +69,8 @@ describe('DateRangePicker', () => {
       const InValidEndDate = data.InValidEndDate;
     
       // Use the fixture data in your test assertions or actions
-      cy.get('#mui-4').should('be.visible').clear().type(InValidStartDate);
-      cy.get('#mui-5').should('be.visible').clear().type(InValidEndDate);
+      dateRangePickerPage.openStartDatePicker().should('be.visible').clear().type(InValidStartDate);
+      dateRangePickerPage.openEndDatePicker().should('be.visible').clear().type(InValidEndDate);
     });
   });
 });
