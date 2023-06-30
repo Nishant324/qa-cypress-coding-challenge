@@ -41,8 +41,8 @@ describe('DateRangePicker', () => {
     // Verify that the date picker is visible to the user
     cy.get('.css-1xhj18k').should('be.visible');
     // Test the functionality of the forward and backward arrow buttons
-    cy.xpath('(//*[name()="path"])[1]').should('be.visible').click();
-    cy.xpath('(//*[name()="svg"][@class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"])[4]').should('be.visible').click();
+    cy.xpath('(//*[name()="svg"])[1]').should('be.visible').click();
+    cy.xpath('(//*[name()="svg"])[4]').should('be.visible').click();
     // Select the start and end date ranges within the picker
     cy.get(`[aria-label="${formattedDate}"]`).contains(StartdayNumber).should('be.visible').click();
     cy.get(`[aria-label="${formattedEndDate}"]`).contains(EnddayNumber).should('be.visible').click();
