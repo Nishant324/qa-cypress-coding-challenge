@@ -45,7 +45,7 @@ Just implement your tests in `cypress/integration/DateRangePicker.spec.js`
 
 ### Submission
 
-Cypress Test Automation Framework
+##### Cypress Test Automation Framework
 
 This repository contains an automated test suite built using Cypress, a JavaScript-based end-to-end testing framework. The framework follows the Page Object Model (POM) design pattern, promotes code reusability, and separates test logic from the page structure.
 
