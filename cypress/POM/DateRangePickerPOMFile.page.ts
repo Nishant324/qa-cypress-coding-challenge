@@ -1,5 +1,3 @@
-import { param } from "cypress/types/jquery";
-
 const DateRangeSelect = '.DateRangeSelect';
 const openStartDatePicker = `#mui-4`;
 const openEndDatePicker = '#mui-5';
