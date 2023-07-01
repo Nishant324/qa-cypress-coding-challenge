@@ -45,13 +45,13 @@ Just implement your tests in `cypress/integration/DateRangePicker.spec.js`
 
 ### Submission
 
-## Cypress Test Automation Framework
+# Cypress Test Automation Framework
 
 This repository contains an automated test suite built using Cypress, a JavaScript-based end-to-end testing framework. The framework follows the Page Object Model (POM) design pattern, promotes code reusability, and separates test logic from the page structure.
 
 ## Folder Structure
 
-# The project is organized into the following folders:
+### The project is organized into the following folders:
 
 1. cypress/integration: Contains test files written using the Cypress framework. Each test file represents a specific feature or component and follows the POM approach.
 
@@ -63,7 +63,7 @@ This repository contains an automated test suite built using Cypress, a JavaScri
 
 ## Getting Started
 
-# To get started with running the tests, follow these steps:
+### To get started with running the tests, follow these steps:
 
 1. Clone the repository: git clone `https://github.com/Nishant324/qa-cypress-coding-challenge`
 
@@ -77,7 +77,7 @@ This repository contains an automated test suite built using Cypress, a JavaScri
 
 ## Writing Tests
 
-# To add new tests or modify existing ones, follow these guidelines:
+### To add new tests or modify existing ones, follow these guidelines:
 
 1. Create a new test file: Add a new JavaScript file under `cypress/integration` that represents the feature or component you are testing.
 
