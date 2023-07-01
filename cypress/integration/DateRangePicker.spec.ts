@@ -22,8 +22,8 @@ describe('DateRangePicker', () => {
     dateRangePickerPage.clickForwardArrow().should('be.visible').click();
     dateRangePickerPage.clickBackwardArrow().should('be.visible').click();
     // Select the start and end date ranges within the picker
-    cy.get(`[aria-label="${formattedDate}"]`).contains(StartdayNumber).should('be.visible').click();
-    cy.get(`[aria-label="${formattedEndDate}"]`).contains(EnddayNumber).should('be.visible').click();
+    dateRangePickerPage.SelectDate(formattedDate).contains(StartdayNumber).should('be.visible').click();
+    dateRangePickerPage.SelectDate(formattedEndDate).contains(EnddayNumber).should('be.visible').click();
   });
 
   it('should allow the user to manually enter date ranges in the start and end date fields', () => {

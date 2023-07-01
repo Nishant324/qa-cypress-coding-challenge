@@ -36,9 +36,9 @@ This repository contains an automated test suite built using Cypress, a JavaScri
 
 1. Create a new test file: Add a new JavaScript file under `cypress/integration` that represents the feature or component you are testing.
 
-2. Create a new POM file: In the `cypress/pom` folder, create a new JavaScript file that corresponds to the page or component being tested. Implement reusable methods and locators within this file to interact with the page.
+2. Create a new POM file: In the `cypress/POM` folder, create a new JavaScript file that corresponds to the page or component being tested. Implement reusable methods and locators within this file to interact with the page.
 
-3. Implement test logic: In the test file, import the relevant POM file(s) from the `cypress/pom` folder and utilize the methods and locators to interact with the page elements. Use Cypress commands and assertions to perform test actions and verifications.
+3. Implement test logic: In the test file, import the relevant POM file(s) from the `cypress/POM` folder and utilize the methods and locators to interact with the page elements. Use Cypress commands and assertions to perform test actions and verifications.
 
 4. Use variables and fixtures: Access the variables defined in `cypress/support/variables.js` for dynamic test data. If needed, leverage hard-coded data stored in the `cypress/fixtures` folder.
 
