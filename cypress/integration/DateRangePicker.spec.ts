@@ -1,32 +1,6 @@
 import 'cypress-xpath';
 import DateRangePickerPage  from '../POM/DateRangePickerPOMFile.spec';
-
-// Get the current date
-const currentDate = new Date();
-
-// Get the year, month, and day from the current date
-const Startyear = currentDate.getFullYear();
-const Startmonth = currentDate.toLocaleString('default', { month: 'short' });
-const Startday = currentDate.getDate();
-
-// Format the date string
-const formattedDate = `${Startmonth} ${Startday}, ${Startyear}`;
-
-// Extract the day number from the formatted date
-const StartdayNumber = Startday.toString();
-
-// Calculate the future date (30 days ahead)
-const endfutureDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000));
-
-// Get the year, month, and day from the future date
-const endyear = endfutureDate.getFullYear();
-const endmonth = endfutureDate.toLocaleString('default', { month: 'short' });
-const endday = endfutureDate.getDate();
-
-// Format the date string
-const formattedEndDate = `${endmonth} ${endday}, ${endyear}`;
-
-const EnddayNumber = endday.toString();
+import { formattedDate, StartdayNumber, formattedEndDate, EnddayNumber} from "../support/Variable";
 
 describe('DateRangePicker', () => {
   const dateRangePickerPage = new DateRangePickerPage();
