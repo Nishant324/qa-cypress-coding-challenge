@@ -1,6 +1,6 @@
 import 'cypress-xpath';
 import DateRangePickerPage  from '../POM/DateRangePickerPOMFile.spec';
-import { formattedDate, StartdayNumber, formattedEndDate, EnddayNumber} from "../support/Variable";
+import { formattedDate, StartdayNumber, formattedEndDate, EnddayNumber} from "../support/variables";
 
 describe('DateRangePicker', () => {
   const dateRangePickerPage = new DateRangePickerPage();
