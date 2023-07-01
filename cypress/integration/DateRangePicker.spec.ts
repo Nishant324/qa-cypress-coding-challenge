@@ -19,8 +19,8 @@ describe('DateRangePicker', () => {
     // Verify that the date picker is visible to the user
     dateRangePickerPage.getDatePicker().should('be.visible');
     // Test the functionality of the forward and backward arrow buttons
-    dateRangePickerPage.clickForwardArrow().should('be.visible').click();
-    dateRangePickerPage.clickBackwardArrow().should('be.visible').click();
+    dateRangePickerPage.clickArrow(1).should('be.visible').click();
+    dateRangePickerPage.clickArrow(4).should('be.visible').click();
     // Select the start and end date ranges within the picker
     dateRangePickerPage.SelectDate(formattedDate).contains(StartdayNumber).should('be.visible').click();
     dateRangePickerPage.SelectDate(formattedEndDate).contains(EnddayNumber).should('be.visible').click();
