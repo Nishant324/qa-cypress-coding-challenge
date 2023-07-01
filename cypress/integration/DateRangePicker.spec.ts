@@ -1,12 +1,12 @@
 import 'cypress-xpath';
-import DateRangePickerPage  from '../POM/DateRangePickerPOMFile.spec';
+import DateRangePickerPage  from '../POM/DateRangePickerPOMFile.page';
 import { formattedDate, StartdayNumber, formattedEndDate, EnddayNumber} from "../support/variables";
 
 describe('DateRangePicker', () => {
   const dateRangePickerPage = new DateRangePickerPage();
   beforeEach(() => {
     // Visit the application screen
-    dateRangePickerPage.visit();
+    cy.visit('/');
   });
   it('should render', () => {
     // Verify that the DateRangePicker component is visible
@@ -27,7 +27,7 @@ describe('DateRangePicker', () => {
   });
 
   it('should allow the user to manually enter date ranges in the start and end date fields', () => {
-    cy.fixture('example.json').then((data) => {
+    cy.fixture('dataFile.json').then((data) => {
       // Access the fixture data within the test
       const ValidStartDate = data.ValidStartDate;
       const ValidEndDate = data.ValidEndDate;
@@ -39,7 +39,7 @@ describe('DateRangePicker', () => {
   });
 
   it('should handle invalid date ranges and revert to valid dates', () => {
-    cy.fixture('example.json').then((data) => {
+    cy.fixture('dataFile.json').then((data) => {
       // Access the fixture data within the test
       const InValidStartDate = data.InValidStartDate;
       const InValidEndDate = data.InValidEndDate;
